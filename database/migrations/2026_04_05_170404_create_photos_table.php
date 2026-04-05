@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('title');
-            $table->string('description');
+            $table->text('description')->nullable();
             $table->string('image_path');
             $table->timestamps();
+
+            $table->index('user_id');
+            $table->index('category_id');
+            $table->index('created_at');
         });
     }
 
