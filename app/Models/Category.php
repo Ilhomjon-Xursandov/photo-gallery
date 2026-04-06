@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'slug'
+        'name', 'slug', 'image_path'
     ];
 
     public function photos()

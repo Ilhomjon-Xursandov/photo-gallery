@@ -34,4 +34,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Photo::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    pubblic function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
