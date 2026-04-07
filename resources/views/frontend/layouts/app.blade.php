@@ -41,7 +41,7 @@
                     <a class="nav-link nav-link-3 {{ request()->routeIs('video-detail')? 'active':''  }}" href="{{route('video-detail')}}">video detail</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-4 {{ request()->routeIs('')? 'active':''  }}" href="../contact.blade.php">Login</a>
+                    <a class="nav-link nav-link-4 {{ request()->routeIs('')? 'active':''  }}" href="{{ route('login')  }}">Login</a>
                 </li>
             </ul>
         </div>

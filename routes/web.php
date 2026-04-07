@@ -21,8 +21,12 @@ Route::get('/videos', function () {
 })->name('videos');
 
 Route::get('/login', function () {
-    return view('auth');
-})->name('auth');
+    return view('auth.login');
+})->name('login');
+
+Route::get('/registration', function () {
+    return view('auth.registration');
+})->name('registration');
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('categories', CategoryController::class);
